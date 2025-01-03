@@ -1,0 +1,7 @@
+For this assignment, I created a script to work with [Hacker News](https://news.ycombinator.com/) using JavaScript and Microsoft’s [Playwright](https://playwright.dev/).
+
+First, I installed the required Node modules with: npm i.
+
+Then, I edited the `index.js` file to make the script go to [Hacker News/newest](https://news.ycombinator.com/newest) and check that the first 100 articles are sorted from newest to oldest. Finally, I ran the script using: node index.js.
+
+I used Playwright as the main tool and had the option to update it or add other packages if needed.
