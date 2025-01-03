@@ -1,17 +1,16 @@
-// EDIT THIS FILE TO COMPLETE ASSIGNMENT QUESTION 1
 const { chromium } = require("playwright");
 
 async function sortHackerNewsArticles() {
-  // Launch browser
+  
   const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext();
   const page = await context.newPage();
 
   try {
-    // Go to Hacker News newest page
+
     await page.goto("https://news.ycombinator.com/newest");
 
-    // Extract titles and timestamps of the first 100 articles
+    
     const articles = await page.$$eval(".athing", rows => {
       return rows.slice(0, 100).map(row => {
         const title = row.querySelector(".titleline a")?.textContent.trim();
@@ -21,7 +20,7 @@ async function sortHackerNewsArticles() {
       });
     });
 
-    // Validate that articles are sorted from newest to oldest by timestamp
+    
     let sorted = true;
     for (let i = 0; i < articles.length - 1; i++) {
       if (new Date(articles[i].timestamp) < new Date(articles[i + 1].timestamp)) {
